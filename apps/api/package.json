@@ -1,0 +1,30 @@
+{
+  "name": "@anticheat/api",
+  "version": "1.0.0",
+  "main": "dist/server.js",
+  "types": "dist/server.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx watch src/server.ts",
+    "lint": "tsc -p tsconfig.json --noEmit",
+    "test": "node -e \"console.log('api tests pending')\""
+  },
+  "dependencies": {
+    "@anticheat/detection-engine": "1.0.0",
+    "@anticheat/shared-types": "1.0.0",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "uuid": "^11.1.0",
+    "zod": "^3.24.3"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/uuid": "^10.0.0",
+    "tsx": "^4.19.3"
+  }
+}

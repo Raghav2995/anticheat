@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Anti-Cheat Client</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 18px; background: #111; color: #f8f8f8; }
+      input, select, button { margin: 6px; padding: 10px; }
+      video { width: 360px; border: 2px solid #3ab; border-radius: 6px; }
+      #log { max-height: 250px; overflow: auto; background: #1f1f1f; padding: 10px; }
+    </style>
+  </head>
+  <body>
+    <h1>Student Exam Monitor</h1>
+    <p>Consent: webcam + activity monitoring are active during exam.</p>
+    <div>
+      <button id="loadExamsBtn">Load Exams</button>
+      <select id="examSelect">
+        <option value="">Select exam...</option>
+      </select>
+    </div>
+    <select id="semesterSelect">
+      <option value="">Select semester...</option>
+      <option value="bca_sem1">BCA Sem 1</option>
+      <option value="bca_sem2">BCA Sem 2</option>
+      <option value="bca_sem3">BCA Sem 3</option>
+    </select>
+    <input id="studentName" placeholder="Student Name" />
+    <button id="startBtn">Start Exam Monitoring</button>
+    <button id="stopBtn">Stop Exam Monitoring</button>
+    <div><video id="webcam" autoplay muted></video></div>
+    <h3>Event Log</h3>
+    <div id="log"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_detection/face_detection.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="/renderer.js"></script>
+  </body>
+</html>
