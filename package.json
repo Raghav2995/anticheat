@@ -1,0 +1,23 @@
+{
+  "name": "electron-anti-cheat",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run --workspaces build",
+    "dev:api": "npm run -w @anticheat/api dev",
+    "dev:api-desktop": "npm run -w @anticheat/api-desktop dev",
+    "dev:admin": "npm run -w @anticheat/admin-web dev",
+    "dev:admin-desktop": "npm run -w @anticheat/admin-desktop dev",
+    "dev:student": "npm run -w @anticheat/student-electron dev",
+    "lint": "npm run --workspaces lint",
+    "test": "npm run --workspaces test"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.2",
+    "typescript": "^5.8.3"
+  }
+}

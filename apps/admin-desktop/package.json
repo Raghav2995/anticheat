@@ -1,0 +1,14 @@
+{
+  "name": "@anticheat/admin-desktop",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "npm run -w @anticheat/admin-web build && tsc -p tsconfig.json",
+    "dev": "npm run build && electron .",
+    "lint": "tsc -p tsconfig.json --noEmit",
+    "test": "node -e \"console.log('admin-desktop tests pending')\""
+  },
+  "dependencies": {
+    "electron": "^30.5.1"
+  }
+}

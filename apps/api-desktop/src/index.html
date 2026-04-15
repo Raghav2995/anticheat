@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anti-Cheat API Controller</title>
+    <style>
+      body { font-family: Inter, "Segoe UI", Arial, sans-serif; margin: 0; background: #0f131c; color: #e5edff; }
+      .wrap { max-width: 900px; margin: 18px auto; padding: 12px; }
+      .card { background: #171d2b; border: 1px solid #293149; border-radius: 16px; padding: 16px; }
+      .status { display: flex; align-items: center; gap: 10px; font-weight: 600; margin-bottom: 12px; }
+      .led { width: 14px; height: 14px; border-radius: 50%; background: #ef5350; box-shadow: 0 0 10px rgba(239,83,80,0.7); }
+      .led.online { background: #5ae16a; box-shadow: 0 0 12px rgba(90,225,106,0.8); }
+      button { padding: 10px 14px; margin-right: 8px; border: none; border-radius: 10px; color: #fff; font-weight: 600; cursor: pointer; }
+      #startBtn { background: #4caf50; }
+      #stopBtn { background: #ef5350; }
+      #logs { margin-top: 14px; background: #0c1018; border-radius: 12px; padding: 10px; height: 420px; overflow: auto; font-family: Consolas, monospace; font-size: 12px; }
+      .line { margin: 0 0 6px; color: #b9c6e6; }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <section class="card">
+        <h1>Anti-Cheat API Controller</h1>
+        <div class="status">
+          <span id="led" class="led"></span>
+          <span id="statusText">Offline</span>
+        </div>
+        <button id="startBtn">Start API</button>
+        <button id="stopBtn">Stop API</button>
+        <div id="logs"></div>
+      </section>
+    </main>
+    <script src="../dist/renderer.js"></script>
+  </body>
+</html>

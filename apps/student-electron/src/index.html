@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Anti-Cheat Client</title>
+    <style>
+      :root {
+        --bg: #f5f2ff;
+        --surface: #ffffff;
+        --surface-2: #f6f2ff;
+        --primary: #6750a4;
+        --primary-2: #8f7bce;
+        --text: #1f1b2d;
+        --muted: #676177;
+        --line: #e3dff1;
+      }
+      body {
+        font-family: Inter, "Segoe UI", Arial, sans-serif;
+        margin: 0;
+        background:
+          radial-gradient(circle at 0% 0%, #ede3ff 0%, transparent 35%),
+          radial-gradient(circle at 100% 0%, #dff4ff 0%, transparent 30%),
+          var(--bg);
+        color: var(--text);
+      }
+      .shell { max-width: 980px; margin: 24px auto; padding: 12px; }
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        box-shadow: 0 8px 24px rgba(31, 27, 45, 0.08);
+        padding: 18px;
+      }
+      .hidden { display: none; }
+      .helper { color: var(--muted); margin-top: -6px; margin-bottom: 12px; }
+      input, select, button {
+        margin: 8px 0;
+        padding: 12px 14px;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        background: var(--surface-2);
+        min-width: 280px;
+      }
+      button {
+        background: linear-gradient(135deg, var(--primary), var(--primary-2));
+        color: #fff;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+      }
+      .toolbar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+      video { width: 360px; border: 2px solid #b7a8e1; border-radius: 12px; background: #0c1018; }
+      #log {
+        max-height: 260px;
+        overflow: auto;
+        background: #151826;
+        color: #d6defa;
+        border-radius: 12px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <section id="loginSection" class="card">
+        <h1>Student Login</h1>
+        <p class="helper">Sign in with your student credentials to start exam proctoring.</p>
+        <input id="studentEmail" placeholder="Student Email" value="student1@college.edu" />
+        <input id="studentPassword" type="password" placeholder="Password" value="student123" />
+        <input id="studentName" placeholder="Student Name" />
+        <button id="studentLoginBtn">Continue to Exam Setup</button>
+      </section>
+
+      <section id="monitorSection" class="card hidden">
+        <h1>Student Exam Monitor</h1>
+        <p class="helper">Consent: webcam + activity monitoring are active during exam.</p>
+        <div class="toolbar">
+          <button id="loadExamsBtn">Load Exams</button>
+          <select id="examSelect">
+            <option value="">Select exam...</option>
+          </select>
+          <select id="semesterSelect">
+            <option value="">Select semester...</option>
+            <option value="bca_sem1">BCA Sem 1</option>
+            <option value="bca_sem2">BCA Sem 2</option>
+            <option value="bca_sem3">BCA Sem 3</option>
+          </select>
+        </div>
+        <div class="toolbar">
+          <button id="startBtn">Start Exam Monitoring</button>
+          <button id="stopBtn">Stop Exam Monitoring</button>
+        </div>
+        <div><video id="webcam" autoplay muted></video></div>
+        <h3>Event Log</h3>
+        <div id="log"></div>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_detection/face_detection.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="/renderer.js"></script>
+  </body>
+</html>
